@@ -1,9 +1,9 @@
 ---
 title: "Was ist noch gleich das beste Album aller Zeiten?"
 teaser: "Warum die ewigen Bestenlisten mehr über uns erzählen als über Musik."
-date: 2026-01-11
+date: 2019-01-11
 topic: "Pop"
-publication: "maikbrueggemeyer.de"
+publication: „Pop. Eine Gebrauchsanweisung" (Pegnuin)
 featured: true
 ---
 
