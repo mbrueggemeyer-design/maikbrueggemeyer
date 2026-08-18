@@ -1,7 +1,7 @@
 ---
 title: "Warum die Deutschen David Hasselhoff liebten"
 teaser: "Über den Mauerfall, Popmythen und einen Mann, der zur richtigen Zeit am richtigen Ort sang."
-date: 2018-01-01
+date: 2018-11-01
 topic: "Pop"
 publication: "I've Been Looking For Frieden"
 featured: true
