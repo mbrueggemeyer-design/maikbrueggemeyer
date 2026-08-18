@@ -1,7 +1,7 @@
 ---
 title: "Was ist guter Geschmack?"
 teaser: "Über Elton John, Pierre Bourdieu und die Frage, warum Geschmack nie Privatsache ist."
-date: 2019-01-01
+date: 2019-10-01
 topic: "Gesellschaft"
 publication: "Pop. Eine Gebrauchsanweisung"
 featured: true
