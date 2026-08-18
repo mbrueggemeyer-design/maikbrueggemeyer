@@ -3,7 +3,7 @@ title: "Was ist noch gleich das beste Album aller Zeiten?"
 teaser: "Warum die ewigen Bestenlisten mehr über uns erzählen als über Musik."
 date: 2019-01-11
 topic: "Pop"
-publication: „Pop. Eine Gebrauchsanweisung" (Pegnuin)
+publication: "Pop. Eine Gebrauchsanweisung" 
 featured: true
 ---
 
