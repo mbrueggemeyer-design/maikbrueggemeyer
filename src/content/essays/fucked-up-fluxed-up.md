@@ -3,7 +3,7 @@ title: "Fucked up, fluxed up"
 teaser: "Von den kreischenden Beatles-Fans über Nico bis zu St. Vincent: über Verführung, fluide Identitäten und die Femme Fatale als Figur der Befreiung."
 date: 2023-10-01
 topic: "Pop"
-publication: Markus Bertsch (Hg.): "Femme Fatale: Blick – Macht – Gender"
+publication: Markus Bertsch (Hg.) "Femme Fatale. Blick – Macht – Gender"
 ---
 
 Die ersten Verführer der Popmusik waren männlich. „Von Anfang an war Rock’n’Roll ein Spiel für Jungs, das vor weiblich besetzten Tribünen aufgeführt wurde.“ Die Boys wurden zu Idolen, zu (Sex-)Göttern, die Girls himmelten sie an. „Es war ein ritualisierter Akt der Verführung, eingerahmt in eine heterosexuelle Storyline von Junge-begeistert- Mädchen, und durch seinen die vierte Wand durchbrechenden Lärm und viszeralen Punch förderte er den direkten Kontakt zwischen Fan und Star. Rock and Roller schienen im Fernsehen immer fehl am Platz zu sein, als würden sie gleich durch die Leinwand brechen. Das Konzert war ihr Medium. Und dieses Medium wurde von Fans aktiviert, die schrien und ihre Klamotten zerrissen und die Bühne stürmten.“
