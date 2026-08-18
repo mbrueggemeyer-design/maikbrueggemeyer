@@ -1,9 +1,9 @@
 ---
 title: "Kann man über Architektur tanzen?"
 teaser: "Warum Musikjournalismus keine Musik erklärt, sondern ihren Resonanzraum erweitert."
-date: 2026-01-18
+date: 2019-01-01
 topic: "Pop"
-publication: "maikbrueggemeyer.de"
+publication: "Pop. Eine Gebrauchsanweisung“
 featured: true
 ---
 
