@@ -1,9 +1,9 @@
 ---
 title: "Warum die Deutschen David Hasselhoff liebten"
 teaser: "Über den Mauerfall, Popmythen und einen Mann, der zur richtigen Zeit am richtigen Ort sang."
-date: 2026-01-25
+date: 2018-01-01
 topic: "Pop"
-publication: "maikbrueggemeyer.de"
+publication: "I've Been Looking For Frieden"
 featured: true
 ---
 1989 war das Jahr, in dem mir die Geschichte zum ersten Mal ihren Odem ins Gesicht hauchte. Fast mit dem letzten Atemzug. Am Silvesterabend. Ich saß mit meinen Eltern auf unserer Wohnzimmercouch gegenüber der großen neuen Eichenschrankwand und schaute auf den zwischen den ungelesenen Johannes-Mario-Simmel- und Marie-Louise-Fischer-Bänden aus dem Bertelsmann-Buchclub platzierten klobigen Fernseher der fränkischen Marke Metz. Auf dem Tisch standen vor mir ein Glas mit Salzstangen und eine Flasche Malzbier. *Those were the days!*
