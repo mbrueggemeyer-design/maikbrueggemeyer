@@ -1,0 +1,181 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import {
+  getCollection,
+  render,
+  type CollectionEntry,
+} from "astro:content";
+
+export const prerender = true;
+
+export async function getStaticPaths() {
+  const conversations = await getCollection("conversations");
+
+  return conversations.map(
+    (conversation: CollectionEntry<"conversations">) => ({
+      params: {
+        id: conversation.id,
+      },
+      props: {
+        conversation,
+      },
+    })
+  );
+}
+
+interface Props {
+  conversation: CollectionEntry<"conversations">;
+}
+
+const { conversation } = Astro.props;
+const { Content } = await render(conversation);
+
+const formattedYear = new Intl.DateTimeFormat("de-DE", {
+  year: "numeric",
+}).format(conversation.data.date);
+---
+
+<BaseLayout
+  title={`${conversation.data.title} – Maik Brüggemeyer`}
+  description={conversation.data.teaser}
+>
+  <article class="conversation">
+    <header class="conversation-header">
+      <p class="kicker">Gespräch</p>
+
+      <h1>{conversation.data.title}</h1>
+
+      <p class="teaser">{conversation.data.teaser}</p>
+
+      <div class="meta">
+        <span>{conversation.data.publication}</span>
+        <span>{formattedYear}</span>
+      </div>
+    </header>
+
+    {
+      conversation.data.introduction && (
+        <section class="introduction">
+          <p>{conversation.data.introduction}</p>
+        </section>
+      )
+    }
+
+    <section class="conversation-body">
+      <Content />
+    </section>
+
+    <footer class="conversation-footer">
+      <a href="/gespraeche">
+        <span aria-hidden="true">←</span>
+        Zurück zu den Gesprächen
+      </a>
+    </footer>
+  </article>
+</BaseLayout>
+
+<style>
+  .conversation-header {
+    min-height: 72vh;
+    padding: 7rem var(--page-padding) 5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .kicker {
+    margin: 0 0 1.5rem;
+    color: var(--color-muted);
+    font-family: "Newsreader", Georgia, serif;
+    font-size: 1rem;
+  }
+
+  h1 {
+    max-width: 10em;
+    margin: 0;
+    font-size: clamp(4.5rem, 9vw, 9rem);
+    font-weight: 400;
+    line-height: 0.88;
+    letter-spacing: -0.05em;
+  }
+
+  .teaser {
+    max-width: 42rem;
+    margin: 3rem 0 0;
+    color: var(--color-muted);
+    font-size: clamp(1.4rem, 2.2vw, 1.8rem);
+    line-height: 1.45;
+  }
+
+  .meta {
+    margin-top: 3rem;
+    padding-top: 1.2rem;
+    display: flex;
+    gap: 1rem;
+    border-top: 1px solid var(--color-border);
+    color: var(--color-muted);
+  font-family: var(--font-sans);
+  font-size: .72rem;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+}
+
+ .introduction,
+.conversation-body {
+  width: min(100% - 4rem, 840px);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+  .introduction {
+    padding-top: 5rem;
+    font-size: 1.8rem;
+    line-height: 1.55;
+    max-width: 34rem;
+  }
+
+  .conversation-body {
+    padding: 4rem 0 7rem;
+    font-size: 1.55rem;
+    line-height: 1.8;
+    
+  }
+
+  .conversation-body :global(strong){
+
+display:block;
+
+margin:3rem 0 .9rem;
+
+font-size:1.55rem;
+
+font-weight:600;
+
+}
+
+  .conversation-body :global(p) {
+    margin: 0 0 1.8em;
+  }
+
+  .conversation-footer {
+    padding: 2rem var(--page-padding) 5rem;
+    border-top: 1px solid var(--color-border);
+  }
+
+  .conversation-footer a {
+    font-family: "Newsreader", Georgia, serif;
+    font-size: 1rem;
+  }
+
+  @media (max-width: 900px) {
+    .conversation-header {
+      min-height: auto;
+      padding: 5rem 1.5rem 4rem;
+    }
+
+    .conversation-body {
+      font-size: 1.2rem;
+    }
+  }
+</style>

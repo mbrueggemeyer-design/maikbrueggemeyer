@@ -1,0 +1,269 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout
+  title="Über – Maik Brüggemeyer"
+  description="Über Maik Brüggemeyer."
+>
+
+<section class="hero">
+
+  <h1>Über</h1>
+
+  <p class="intro">
+    Auf dieser Seite finden sich Texte zu Musik, Literatur, Film und Gesellschaft, einige aktuell, andere historisch. Sie erzählen durch die Brille der Popkultur von unserer Gegenwart.
+  </p>
+
+</section>
+
+<section class="content">
+
+  <section class="block">
+
+    <h2>Zur Person</h2>
+
+    <p>
+      Maik Brüggemeyer ist Autor und Creative Director der deutschen Ausgabe des <em>ROLLING STONE</em>.
+    </p>
+
+  </section>
+
+  <section class="block">
+
+    <div class="books">
+
+      <h3>Romane</h3>
+
+      <article class="book">
+        <strong>Das Da-Da-Da-Sein</strong>
+        <p>Aufbau Verlag, Berlin, 2011.</p>
+      </article>
+
+      <article class="book">
+        <strong>Catfish. Ein Bob-Dylan-Roman</strong>
+        <p>Metrolit Verlag, Berlin, 2015.</p>
+      </article>
+
+      <article class="book">
+        <strong>Wie jeder weiß, ist das hier das Nirgendwo</strong>
+        <p>Ventil Verlag, Mainz, 2026.</p>
+      </article>
+
+      <h3>Sachbücher</h3>
+
+      <article class="book">
+        <strong>I've Been Looking For Frieden. Eine deutsche Geschichte in zehn Songs</strong>
+        <p>Penguin Verlag, München, 2018.</p>
+      </article>
+
+      <article class="book">
+        <strong>Pop. Eine Gebrauchsanweisung</strong>
+        <p>Penguin Verlag, München, 2019.</p>
+      </article>
+
+      <article class="book">
+        <strong>Schöner kann es gar nicht sein. The Beatles von 1957–1970</strong>
+        <p>Andreas Reiffer Verlag, Meine, 2021.</p>
+      </article>
+
+      <h3>Als Herausgeber</h3>
+
+      <article class="book">
+        <strong>Look Out Kid. Bob Dylans Lieder, unsere Geschichten</strong>
+        <p>Ullstein Verlag, Berlin, 2021.</p>
+      </article>
+
+      <h3>Buchbeiträge</h3>
+
+      <article class="book">
+        <strong>Pop Sounds. Klangtexturen in der Pop- und Rockmusik</strong>
+        <p>In: Ralf von Appen / Thomas Phleps (Hrsg.), Transcript Verlag, Bielefeld, 2003.</p>
+      </article>
+
+      <article class="book">
+        <strong>Mama, das hast du schon fünf Mal erzählt!</strong>
+        <p>In: Ann-Kathrin Eckardt / Lukas Hillger (Hrsg.), Rowohlt Verlag, Hamburg, 2012.</p>
+      </article>
+
+      <article class="book">
+        <strong>The Beat Goes On</strong>
+        <p>In: Thomas Kraft (Hrsg.), Langen-Müller, München, 2013.</p>
+      </article>
+
+      <article class="book">
+        <strong>Rolling Stone. Das Beste aus 20 Jahren</strong>
+        <p>In: Sebastian Zabel / Arne Willander (Hrsg.), Metrolit Verlag, Berlin, 2014.</p>
+      </article>
+
+      <article class="book">
+        <strong>Neue Rundschau 2017/1: Poetische Ornithologie</strong>
+        <p>In: Teresa Präauer (Hrsg.), S. Fischer Verlag, Frankfurt am Main, 2017.</p>
+      </article>
+
+      <article class="book">
+        <strong>Hear 'Em All. Heavy Metal für die einsame Insel</strong>
+        <p>In: Frank Schäfer (Hrsg.), Ventil Verlag, Mainz, 2019.</p>
+      </article>
+
+      <article class="book">
+        <strong>Bored Teenagers. Ein Punk-Mixtape</strong>
+        <p>In: Jonas Engelmann (Hrsg.), Ventil Verlag, Mainz, 2026.</p>
+      </article>
+
+      <article class="book">
+        <strong>Angriff aufs Schlaraffenland. Ein Deutschpunk-Mixtape</strong>
+        <p>In: Jonas Engelmann (Hrsg.), Ventil Verlag, Mainz, 2026.</p>
+      </article>
+
+      <h3>Übersetzung</h3>
+
+      <article class="book">
+        <strong>Robert Forster: Grant &amp; Ich</strong>
+        <p>Heyne Encore, München, 2017.</p>
+      </article>
+
+    </div>
+
+  </section>
+
+  <section class="block">
+
+    <h2>Kontakt</h2>
+
+    <p>
+      <a href="mailto:m.brueggemeyer@googlemail.com">
+        m.brueggemeyer@googlemail.com
+      </a>
+    </p>
+
+  </section>
+
+</section>
+
+</BaseLayout>
+
+<style>
+
+.hero{
+  padding:7rem var(--page-padding) 5rem;
+  border-bottom:1px solid var(--color-border);
+}
+
+h1{
+  margin:0;
+  font-size:clamp(5rem,11vw,10rem);
+  font-weight:400;
+  line-height:.85;
+  letter-spacing:-.055em;
+}
+
+.intro{
+  max-width:42rem;
+  margin:3rem 0 0;
+  font-size:1.8rem;
+  line-height:1.55;
+}
+
+.content{
+  width:min(100% - 3rem,840px);
+  margin:0 auto;
+  padding:5rem 0 7rem;
+}
+
+.block{
+  margin-bottom:5rem;
+}
+
+.block:last-child{
+  margin-bottom:0;
+}
+
+.block h2{
+  margin:0 0 2rem;
+  font-family:var(--font-sans);
+  font-size:.72rem;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  color:var(--color-muted);
+  font-weight:500;
+}
+
+.books h3{
+  margin:3rem 0 1rem;
+  font-size:1.5rem;
+  font-weight:400;
+  font-style:italic;
+}
+
+.books h3:first-child{
+  margin-top:0;
+}
+
+.book{
+  margin-bottom:1.4rem;
+}
+
+.book strong{
+  display:block;
+  font-family:"Newsreader", Georgia, serif;
+  font-size:2.15rem;
+  font-weight:400;
+  line-height:1.08;
+  letter-spacing:-0.025em;
+}
+
+.block > p{
+  margin:0;
+  font-size:1.55rem;
+  line-height:1.7;
+  color:var(--color-text);
+}
+
+.block a{
+  color:inherit;
+  text-decoration:none;
+}
+
+.block a:hover{
+  opacity:.65;
+}
+
+{
+  color:inherit;
+}
+
+@media (max-width:900px){
+
+.hero{
+  padding:5rem 1.5rem 4rem;
+}
+
+.intro{
+  font-size:1.5rem;
+}
+
+.content{
+  width:min(100% - 3rem,760px);
+}
+
+.book strong{
+  font-size:1.3rem;
+}
+
+}
+
+.books h3{
+  margin:4rem 0 1.4rem;
+  font-family:"Newsreader", Georgia, serif;
+  font-size:1.35rem;
+  font-weight:400;
+  font-style:italic;
+  color:var(--color-text);
+}
+
+.books h3:first-child{
+  margin-top:0;
+}
+
+</style>

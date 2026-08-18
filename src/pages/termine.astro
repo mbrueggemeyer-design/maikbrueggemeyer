@@ -1,0 +1,224 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const upcoming = [
+  {
+    date: "18. September 2026",
+    city: "Köln",
+    title: "Wie jeder weiß, ist das hier das Nirgendwo",
+    type: "Lesung",
+    venue: "King Georg",
+    series: "Literatur zur Zeit",
+    details: "Moderation: Wolfgang Frömberg",
+  },
+];
+
+const past = [];
+---
+
+<BaseLayout
+  title="Termine – Maik Brüggemeyer"
+  description="Lesungen, Gespräche und Veranstaltungen mit Maik Brüggemeyer."
+>
+  <header class="page-header">
+    <h1>Termine</h1>
+
+    <p class="introduction">
+      Lesungen, Gespräche und Veranstaltungen.
+    </p>
+  </header>
+
+  <main class="events">
+
+    <section class="event-section">
+      <p class="section-label">Kommende Termine</p>
+
+      <div class="event-list">
+        {
+          upcoming.map((event) => (
+            <article class="event">
+              <div class="event-date">
+                <p>{event.date}</p>
+              </div>
+
+              <div class="event-copy">
+                <p class="city">{event.city}</p>
+
+                <h2>{event.title}</h2>
+
+                <p class="meta">
+                  {event.type} im {event.venue}
+                  {event.series && ` · Reihe „${event.series}“`}
+                </p>
+
+                {event.details && (
+                  <p class="details">{event.details}</p>
+                )}
+              </div>
+            </article>
+          ))
+        }
+      </div>
+    </section>
+
+    {
+      past.length > 0 && (
+        <section class="event-section past">
+          <p class="section-label">Vergangene Termine</p>
+
+          <div class="event-list">
+            {past.map((event) => (
+              <article class="event">
+                <div class="event-date">
+                  <p>{event.date}</p>
+                </div>
+
+                <div class="event-copy">
+                  <p class="city">{event.city}</p>
+
+                  <h2>{event.title}</h2>
+
+                  <p class="meta">
+                    {event.type} im {event.venue}
+                  </p>
+
+                  {event.details && (
+                    <p class="details">{event.details}</p>
+                  )}
+                </div>
+              </article>
+            ))}
+          </div>
+        </section>
+      )
+    }
+
+  </main>
+</BaseLayout>
+
+<style>
+  .page-header {
+    min-height: 48vh;
+    padding: 7rem var(--page-padding) 5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  h1 {
+    margin: 0;
+    font-size: clamp(5rem, 11vw, 10rem);
+    font-weight: 400;
+    line-height: 0.85;
+    letter-spacing: -0.055em;
+  }
+
+  .introduction {
+    max-width: 44rem;
+    margin: 3rem 0 0;
+    color: var(--color-muted);
+    font-size: 1.45rem;
+    line-height: 1.5;
+  }
+
+  .events {
+    padding: 4rem var(--page-padding) 7rem;
+  }
+
+  .event-section + .event-section {
+    margin-top: 6rem;
+  }
+
+  .section-label {
+    margin: 0 0 2rem;
+    color: var(--color-muted);
+    font-family: var(--font-sans);
+    font-size: 0.72rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+  }
+
+  .event-list {
+    border-top: 1px solid var(--color-border);
+  }
+
+  .event {
+    max-width: 900px;
+    padding: 3rem 0;
+    display: grid;
+    grid-template-columns: 170px minmax(0, 1fr);
+    gap: 3rem;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .event-date p {
+    margin: 0.35rem 0 0;
+    color: var(--color-muted);
+    font-family: var(--font-sans);
+    font-size: 0.72rem;
+    letter-spacing: 0.12em;
+    line-height: 1.5;
+    text-transform: uppercase;
+  }
+
+  .city {
+    margin: 0 0 1.2rem;
+    color: var(--color-muted);
+    font-family: var(--font-sans);
+    font-size: 0.72rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+  }
+
+  h2 {
+    max-width: 16em;
+    margin: 0;
+    font-size: clamp(2.4rem, 4vw, 4.3rem);
+    font-weight: 400;
+    line-height: 0.98;
+    letter-spacing: -0.035em;
+  }
+
+  .meta,
+  .details {
+    max-width: 48ch;
+    color: var(--color-muted);
+    line-height: 1.6;
+  }
+
+  .meta {
+    margin: 1.4rem 0 0;
+    font-size: 1.08rem;
+  }
+
+  .details {
+    margin: 0.45rem 0 0;
+    font-size: 1rem;
+  }
+
+  @media (max-width: 900px) {
+    .page-header {
+      min-height: auto;
+      padding: 5rem 1.5rem 4rem;
+    }
+
+    .events {
+      padding: 3rem 1.5rem 5rem;
+    }
+
+    .event {
+      padding: 2.5rem 0;
+      grid-template-columns: 1fr;
+      gap: 1.2rem;
+    }
+
+    .event-date p {
+      margin: 0;
+    }
+
+    h2 {
+      font-size: clamp(2.3rem, 10vw, 3.7rem);
+    }
+  }
+</style>

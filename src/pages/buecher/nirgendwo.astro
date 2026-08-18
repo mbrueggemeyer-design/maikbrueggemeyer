@@ -1,0 +1,326 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { Content as Excerpt } from "../../content/books/nirgendwo-auszug.md";
+---
+
+<BaseLayout
+  title="Wie jeder weiß, ist das hier das Nirgendwo – Maik Brüggemeyer"
+  description="Ein melancholisch-komischer Roman über Herkunft, das Älterwerden und die Versprechen der Popkultur."
+>
+  <article class="book-page">
+
+    <header class="title-page">
+  <img
+    class="cover"
+    src="/images/books/nirgendwo.jpg"
+    alt="Cover des Romans Wie jeder weiß, ist das hier das Nirgendwo"
+  />
+
+  <div class="title-copy">
+    <p class="book-type">Roman</p>
+
+    <h1>
+      Wie jeder weiß,<br />
+      ist das hier<br />
+      das Nirgendwo
+    </h1>
+
+    <div class="edition-meta">
+      <p>
+        Ventil Verlag, Mainz<br />
+        2026
+      </p>
+
+      <p>ISBN 978-3-95575-259-0</p>
+    </div>
+  </div>
+</header>
+
+    <main class="book-content">
+
+      <section class="author-note">
+        <p>
+          Bildungs- und Künstlerromane haben mich schon immer fasziniert.
+          Sie erzählen von Menschen, die ihren Platz in der Welt suchen –
+          oder gerade deshalb keinen finden, weil sie einer besonderen
+          Begabung folgen. Mich interessierte die Gegenbewegung: ein
+          gescheiterter Bildungsroman. Einer, dessen Held lange gar nicht
+          bemerkt, dass er gescheitert ist. Nicht, weil er seiner eigenen
+          Kunst folgt, sondern der Kunst anderer.
+        </p>
+
+        <p>
+          Dafür schien mir die Popkultur der ideale Bezugspunkt. Anders als
+          in der klassischen Kunst steht in ihr bereits dem Namen nach nicht
+          der Schöpfer, sondern der Konsument im Mittelpunkt. Peter Justen
+          lebt von Büchern, Liedern, Filmen und Gesprächen über sie. Er
+          richtet sein Leben nach den Versprechen einer Popkultur aus, die
+          früher einmal Gegenkultur hieß: dem Versprechen eines freieren,
+          klügeren, anderen Lebens jenseits der bürgerlichen Gesellschaft.
+        </p>
+
+        <p>
+          Mit Ende vierzig muss er erkennen, dass diese Versprechen sich
+          nicht einlösen lassen. Nicht weil die Kunst ihn enttäuscht hätte,
+          sondern weil sie niemals dazu bestimmt war, ein Leben zu ersetzen.
+          Zugleich lebt er in einer Zeit, in der sich auch die kulturellen
+          Koordinaten verschoben haben. Anders als noch die Helden der
+          Popromane der neunziger Jahre kann er nicht mehr selbstverständlich
+          davon ausgehen, dass die Welt seine Perspektive teilt. Er gehört
+          plötzlich selbst zu denen, die lernen müssen, sich neu zu verorten.
+        </p>
+
+        <p>
+          <em>Wie jeder weiß, ist das hier das Nirgendwo</em> ist deshalb
+          nicht nur ein Roman über Herkunft und Rückkehr. Er ist auch ein
+          Roman über das Ende einer kulturellen Selbstverständlichkeit –
+          und über die Frage, was von den Versprechen der Popkultur bleibt,
+          wenn man älter wird.
+        </p>
+      </section>
+
+      <section class="section voices">
+        <h2>Stimmen</h2>
+
+        <figure>
+          <blockquote>
+            »Das ist alles so kolossal gut beobachtet und geschrieben,
+            und ich konnte das so gut nachempfinden. Selten hat jemand
+            diesen Zwiespalt unserer ländlichen Herkunft und
+            popkulturellen Prägung so auf den Punkt gebracht.«
+          </blockquote>
+
+          <figcaption>Jan Brandt</figcaption>
+        </figure>
+
+        <figure>
+          <blockquote>
+            »Mit Vollgas durch den Pop-, Entwicklungs- und Bildungsroman –
+            und zwar im Rückwärtsgang! So was geht nicht ohne Blutvergießen
+            ab. Und da es sich um das heiße Herzblut eines kenntnisreichen,
+            humorvollen, beseelten, stilsicheren Stuntman vom Schlage Maik
+            Brüggemeyers handelt, feiert das vampirische Publikum – wir –
+            ein wahres Bacchanal.«
+          </blockquote>
+
+          <figcaption>Frank Schulz</figcaption>
+        </figure>
+      </section>
+
+      <section class="section excerpt">
+        <h2>Aus dem Roman</h2>
+
+<div class="excerpt-text">
+  <Excerpt />
+</div>
+        <p class="excerpt-end">Ende der Leseprobe</p>
+      </section>
+
+    </main>
+
+    <footer class="book-footer">
+      <a href="/buecher">
+        <span aria-hidden="true">←</span>
+        Alle Bücher
+      </a>
+    </footer>
+
+  </article>
+</BaseLayout>
+
+<style>
+.title-page {
+  width: min(100% - 3rem, 840px);
+  margin: 0 auto;
+  padding: 5rem 0 3rem;
+  display: grid;
+  grid-template-columns: 210px minmax(0, 1fr);
+  gap: 3.5rem;
+  align-items: start;
+}
+
+.title-copy {
+  padding-top: 0.25rem;
+}
+
+  .book-type {
+  margin: 0 0 1rem;
+  color: var(--color-muted);
+  font-family: "Newsreader", Georgia, serif;
+  font-size: 1.05rem;
+}
+
+h1 {
+  max-width: 10em;
+  margin: 0;
+  font-size: clamp(3.4rem, 5.5vw, 5.3rem);
+  font-weight: 400;
+  line-height: 0.93;
+  letter-spacing: -0.045em;
+}
+
+.edition-meta {
+  margin-top: 1.75rem;
+  color: var(--color-muted);
+  font-family: "Newsreader", Georgia, serif;
+  font-size: 1.05rem;
+  line-height: 1.5;
+}
+
+.edition-meta p {
+  margin: 0 0 0.65rem;
+}
+
+.cover {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.author-note {
+  padding: 3rem 0 5rem;
+  border-top: 1px solid var(--color-border);
+}
+
+  .book-content {
+    width: min(100% - 3rem, 840px);
+    margin: 0 auto;
+  }
+
+.author-note {
+    padding-top: 1.5rem;
+    padding-bottom: 5rem;
+    border-top: 1px solid var(--color-border);
+}
+
+.author-note p{
+    max-width:46rem;
+    margin:0 0 1.65em;
+    font-size:1.55rem;
+    line-height:1.82;
+}
+
+  .section {
+    padding: 5rem 0;
+    border-top: 1px solid var(--color-border);
+  }
+
+  .section h2 {
+    margin: 0 0 3rem;
+    font-family: var(--font-sans);
+    font-size: 0.78rem;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+  }
+
+  figure {
+    max-width: 44rem;
+    margin: 0;
+  }
+
+  figure + figure {
+    margin-top: 4rem;
+  }
+
+  blockquote {
+    margin: 0;
+    font-size: 1.45rem;
+    line-height: 1.7;
+  }
+
+  figcaption {
+    margin-top: 1.25rem;
+    color: var(--color-muted);
+    font-family: var(--font-sans);
+    font-size: 0.75rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+  }
+
+  .excerpt-text {
+    max-width: 40rem;
+  }
+
+ .excerpt-text :global(p) {
+  margin: 0 0 1.8em;
+  font-size: 1.32rem;
+  line-height: 1.9;
+}
+
+  .excerpt-text code {
+    font-size: 0.85em;
+  }
+
+  .excerpt-end {
+    margin: 4rem 0 0;
+    color: var(--color-muted);
+    font-family: var(--font-sans);
+    font-size: 0.72rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+  }
+
+  .book-footer {
+    padding: 2rem var(--page-padding) 5rem;
+    border-top: 1px solid var(--color-border);
+  }
+
+  .book-footer a {
+    font-family: "Newsreader", Georgia, serif;
+    font-size: 1rem;
+  }
+
+  @media (max-width: 900px) {
+  .title-page {
+    padding: 4rem 0 2.5rem;
+    grid-template-columns: 125px minmax(0, 1fr);
+    gap: 1.75rem;
+  }
+
+h1 {
+    max-width: 11em;
+    font-size: clamp(2.4rem, 9vw, 4rem);
+    line-height: 0.94;
+    letter-spacing: -0.04em;
+}
+
+    .cover {
+      width: 130px;
+    }
+
+  .book-type {
+    margin-bottom: 0.65rem;
+  }
+
+  .edition-meta {
+    margin-top: 1rem;
+    font-size: 0.95rem;
+  }
+
+  .author-note {
+    padding-top: 2.25rem;
+  }
+
+    .author-note p {
+      font-size: 1.5rem;
+    }
+
+    .section {
+      padding: 4rem 0;
+    }
+
+    blockquote {
+      font-size: 1.25rem;
+    }
+
+   .excerpt-text :global(p) {
+  font-size: 1.18rem;
+}
+    }
+
+    .book-footer {
+      padding: 2rem 1.5rem 4rem;
+    }
+  
+</style>

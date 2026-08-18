@@ -1,0 +1,224 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout
+  title="Kontakt – Maik Brüggemeyer"
+  description="Kontakt zu Maik Brüggemeyer."
+>
+
+<section class="hero">
+
+    <p class="label">
+        Kontakt
+    </p>
+
+    <h1>
+        Lass uns<br />
+        ins Gespräch<br />
+        kommen.
+    </h1>
+
+</section>
+
+<section class="grid">
+
+    <div class="left">
+
+        <h2>
+            E-Mail
+        </h2>
+
+    </div>
+
+    <div class="right">
+
+        <p>
+            Für Anfragen zu Interviews, Moderationen,
+            Lesungen, Podcasts oder journalistischen
+            Projekten erreichst du mich unter:
+        </p>
+
+        <a href="mailto:m.brueggemeyer@googlemail.com">
+            m.brueggemeyer@googlemail.com
+        </a>
+
+    </div>
+
+</section>
+
+<section class="grid">
+
+    <div class="left">
+
+        <h2>
+            Newsletter
+        </h2>
+
+    </div>
+
+    <div class="right">
+
+        <p>
+            Mein Newsletter erscheint regelmäßig
+            im ROLLING STONE-Wohnzimmer.
+        </p>
+
+        <a href="/newsletter">
+            Zum Newsletter →
+        </a>
+
+    </div>
+
+</section>
+
+<section class="grid">
+
+    <div class="left">
+
+        <h2>
+            Social
+        </h2>
+
+    </div>
+
+    <div class="right">
+
+        <p>
+
+            Die wichtigsten Neuigkeiten veröffentliche
+            ich außerdem auf Instagram.
+
+        </p>
+
+    </div>
+
+</section>
+
+</BaseLayout>
+
+<style>
+
+.hero{
+
+padding:7rem var(--page-padding);
+
+min-height:52vh;
+
+display:flex;
+
+flex-direction:column;
+
+justify-content:flex-end;
+
+border-bottom:1px solid var(--color-border);
+
+}
+
+.label{
+
+margin-bottom:1.2rem;
+
+font-family:var(--font-sans);
+
+font-size:.8rem;
+
+letter-spacing:.15em;
+
+text-transform:uppercase;
+
+color:var(--color-muted);
+
+}
+
+h1{
+
+margin:0;
+
+font-size:clamp(5rem,10vw,9rem);
+
+font-weight:400;
+
+line-height:.87;
+
+letter-spacing:-.05em;
+
+}
+
+.grid{
+
+display:grid;
+
+grid-template-columns:220px 1fr;
+
+border-bottom:1px solid var(--color-border);
+
+}
+
+.left{
+
+padding:2rem;
+
+border-right:1px solid var(--color-border);
+
+}
+
+.left h2{
+
+margin:0;
+
+font-weight:400;
+
+}
+
+.right{
+
+padding:2rem;
+
+max-width:700px;
+
+}
+
+.right p{
+
+font-size:1.25rem;
+
+line-height:1.6;
+
+margin-bottom:1.5rem;
+
+color:var(--color-muted);
+
+}
+
+.right a{
+
+font-size:1.4rem;
+
+}
+
+@media(max-width:900px){
+
+.hero{
+
+padding:5rem 1.5rem;
+
+}
+
+.grid{
+
+grid-template-columns:1fr;
+
+}
+
+.left{
+
+border-right:none;
+
+border-bottom:1px solid var(--color-border);
+
+}
+
+}
+
+</style>

@@ -1,0 +1,208 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import {
+  getCollection,
+  render,
+  type CollectionEntry,
+} from "astro:content";
+
+export async function getStaticPaths() {
+  const issues = await getCollection("wohnzimmer");
+
+  return issues.map((issue) => ({
+    params: {
+      id: issue.id,
+    },
+    props: {
+      issue,
+    },
+  }));
+}
+
+interface Props {
+  issue: CollectionEntry<"wohnzimmer">;
+}
+
+const { issue } = Astro.props;
+
+const { Content } = await render(issue);
+
+const formattedDate = new Intl.DateTimeFormat("de-DE", {
+  weekday: "long",
+  day: "numeric",
+  month: "long",
+  year: "numeric",
+}).format(issue.data.date);
+---
+
+<BaseLayout
+  title={`${issue.data.title} – Wohnzimmer`}
+  description={issue.data.teaser ?? ""}
+>
+
+<article class="wohnzimmer">
+
+<header class="header">
+
+<p class="section">
+Wohnzimmer
+</p>
+
+<p class="issue">
+Ausgabe {issue.data.issue} · {formattedDate}
+</p>
+
+<h1>
+  {issue.data.title}
+</h1>
+
+</header>
+
+<section class="content">
+  <img
+    class="handwriting greeting"
+    src="/handwriting/liebe-leserinnen.svg"
+    alt="Liebe Leser:innen,"
+  />
+
+  <Content />
+
+  <img
+    class="handwriting signoff"
+    src="/handwriting/unterschrift-korrigiert.svg"
+    alt="Herzliche Grüße, Maik Brüggemeyer"
+  />
+</section>
+
+<footer class="footer">
+
+<a href="/wohnzimmer">
+← Zur Übersicht
+</a>
+
+</footer>
+
+</article>
+
+</BaseLayout>
+
+<style>
+
+.header{
+
+max-width:760px;
+
+margin:0 auto;
+
+padding:7rem 2rem 3rem;
+
+}
+
+.section{
+
+font-family:var(--font-sans);
+
+font-size:.72rem;
+
+letter-spacing:.18em;
+
+text-transform:uppercase;
+
+color:var(--color-muted);
+
+margin:0 0 2rem;
+
+}
+
+.issue{
+
+font-family:"Newsreader",Georgia,serif;
+
+font-size:1.1rem;
+
+color:var(--color-muted);
+
+margin:0;
+
+}
+
+h1{
+
+margin:.5rem 0 2rem;
+
+font-size:clamp(3.5rem,7vw,6rem);
+
+font-weight:400;
+
+line-height:.95;
+
+}
+
+.date{
+
+font-family:"Newsreader",Georgia,serif;
+
+font-size:1.1rem;
+
+color:var(--color-muted);
+
+}
+
+.content{
+
+max-width:760px;
+
+margin:0 auto;
+
+padding:3rem 2rem 6rem;
+
+font-size:1.6rem;
+
+line-height:1.85;
+
+}
+
+.content :global(p){
+
+margin-bottom:1.6em;
+
+}
+
+.footer{
+
+max-width:760px;
+
+margin:0 auto;
+
+padding:0 2rem 6rem;
+
+border-top:1px solid var(--color-border);
+
+padding-top:2rem;
+
+}
+
+.footer a{
+
+font-family:"Newsreader",Georgia,serif;
+
+font-size:1rem;
+
+}
+
+.handwriting {
+  display: block;
+  height: auto;
+}
+
+.greeting {
+  width: min(100%, 430px);
+  margin: 0 0 3rem;
+}
+
+.signoff {
+  width: min(100%, 520px);
+  margin-top: 1.5rem;
+  margin-left: 1rem;
+}
+</style>

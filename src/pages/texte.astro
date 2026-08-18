@@ -1,0 +1,194 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import {
+  getCollection,
+  type CollectionEntry,
+} from "astro:content";
+
+type EssayEntry = CollectionEntry<"essays">;
+
+const essays: EssayEntry[] = (await getCollection("essays")).sort(
+  (a: EssayEntry, b: EssayEntry) =>
+    b.data.date.getTime() - a.data.date.getTime()
+);
+---
+
+<BaseLayout
+  title="Essays – Maik Brüggemeyer"
+  description="Notizen zur Geschichte der Gegenwart."
+>
+  <header class="page-header">
+    <h1>Essays</h1>
+
+    <p class="introduction">
+      Notizen zur Geschichte der Gegenwart.
+    </p>
+  </header>
+
+  <section class="archive">
+    <div class="entry-list">
+      {
+        essays.length > 0 ? (
+          essays.map((essay, index) => (
+            <article>
+              <p class="number">
+                {String(index + 1).padStart(2, "0")}
+              </p>
+
+              <div class="meta">
+                <span>
+                  {new Intl.DateTimeFormat("de-DE", {
+                    month: "long",
+                    year: "numeric",
+                  }).format(essay.data.date)}
+                </span>
+
+                <span>{essay.data.publication}</span>
+              </div>
+
+              <div class="entry-copy">
+                <h2>{essay.data.title}</h2>
+                <p>{essay.data.teaser}</p>
+              </div>
+
+              <a
+                href={`/essays/${essay.id}`}
+                aria-label={`Essay öffnen: ${essay.data.title}`}
+              >
+                Lesen <span aria-hidden="true">→</span>
+              </a>
+            </article>
+          ))
+        ) : (
+          <div class="empty">
+            <p>Es sind noch keine Essays eingetragen.</p>
+          </div>
+        )
+      }
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .page-header {
+    min-height: 55vh;
+    padding: 7rem var(--page-padding) 5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  h1 {
+    margin: 0;
+    font-size: clamp(5rem, 11vw, 10rem);
+    font-weight: 400;
+    line-height: 0.85;
+    letter-spacing: -0.055em;
+  }
+
+  .introduction {
+    max-width: 46rem;
+    margin: 3rem 0 0;
+    color: var(--color-muted);
+    font-size: 1.45rem;
+    line-height: 1.5;
+  }
+
+  .archive {
+    padding: 6rem var(--page-padding);
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .entry-list {
+    border-top: 1px solid var(--color-border);
+  }
+
+  article {
+    padding: 2.5rem 0;
+    display: grid;
+    grid-template-columns:
+      55px
+      180px
+      minmax(0, 1fr)
+      100px;
+    gap: 2rem;
+    align-items: start;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .number {
+    margin: 0;
+    color: var(--color-muted);
+    font-family: var(--font-sans);
+    font-size: 0.72rem;
+  }
+
+  .meta {
+    display: flex;
+    flex-direction: column;
+    gap: 0.45rem;
+    color: var(--color-muted);
+    font-family: "Newsreader", Georgia, serif;
+    font-size: 0.9rem;
+    line-height: 1.3;
+  }
+
+  .entry-copy h2 {
+    margin: 0 0 0.8rem;
+    font-size: clamp(2rem, 3vw, 3rem);
+    font-weight: 400;
+    line-height: 1.05;
+    letter-spacing: -0.025em;
+  }
+
+  .entry-copy p {
+    max-width: 54ch;
+    margin: 0;
+    color: var(--color-muted);
+    line-height: 1.55;
+  }
+
+  article > a {
+    display: flex;
+    justify-content: space-between;
+    gap: 0.8rem;
+    font-family: "Newsreader", Georgia, serif;
+    font-size: 1rem;
+  }
+
+  .empty {
+    padding: 2rem 0;
+    color: var(--color-muted);
+  }
+
+  .empty p {
+    margin: 0;
+  }
+
+  @media (max-width: 900px) {
+    .page-header {
+      min-height: auto;
+      padding: 5rem 1.5rem 4rem;
+    }
+
+    .archive {
+      padding: 4rem 1.5rem;
+    }
+
+    article {
+      grid-template-columns: 38px minmax(0, 1fr);
+      gap: 1rem;
+    }
+
+    .meta,
+    .entry-copy,
+    article > a {
+      grid-column: 2;
+    }
+
+    article > a {
+      width: fit-content;
+    }
+  }
+</style>

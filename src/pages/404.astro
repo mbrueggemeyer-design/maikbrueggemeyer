@@ -1,0 +1,113 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout
+  title="Seite nicht gefunden – Maik Brüggemeyer"
+  description="Diese Seite existiert nicht."
+>
+
+<section class="not-found">
+
+  <p class="kicker">Good Grief!</p>
+
+  <h1>Seite nicht gefunden.</h1>
+
+  <p class="intro">
+    Vielleicht finden Sie stattdessen einen Essay,
+    ein Gespräch oder eine Ausgabe des Wohnzimmers.
+  </p>
+
+  <nav class="links">
+
+    <a href="/texte">Essays</a>
+
+    <a href="/gespraeche">Gespräche</a>
+
+    <a href="/wohnzimmer">Wohnzimmer</a>
+
+    <a href="/">Startseite</a>
+
+  </nav>
+
+</section>
+
+</BaseLayout>
+
+<style>
+
+.not-found{
+
+max-width:760px;
+
+margin:0 auto;
+
+padding:10rem 2rem;
+
+}
+
+.kicker{
+
+margin:0 0 2rem;
+
+font-family:var(--font-sans);
+
+font-size:.72rem;
+
+letter-spacing:.18em;
+
+text-transform:uppercase;
+
+color:var(--color-muted);
+
+}
+
+h1{
+
+margin:0;
+
+font-size:clamp(4rem,9vw,7rem);
+
+font-weight:400;
+
+line-height:.9;
+
+letter-spacing:-.05em;
+
+}
+
+.intro{
+
+max-width:32rem;
+
+margin:3rem 0 4rem;
+
+font-size:1.5rem;
+
+line-height:1.6;
+
+color:var(--color-muted);
+
+}
+
+.links{
+
+display:flex;
+
+flex-direction:column;
+
+gap:1rem;
+
+}
+
+.links a{
+
+width:fit-content;
+
+font-family:"Newsreader",Georgia,serif;
+
+font-size:1.25rem;
+
+}
+
+</style>

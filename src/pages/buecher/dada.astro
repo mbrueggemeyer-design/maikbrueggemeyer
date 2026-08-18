@@ -1,0 +1,227 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { Content as Excerpt } from "../../content/books/dada-auszug.md";
+---
+
+<BaseLayout
+  title="Das Da-Da-Da-Sein – Maik Brüggemeyer"
+  description="Sein und Pop."
+>
+  <article class="book-page">
+    <header class="title-page">
+      <img
+        class="cover"
+        src="/images/books/dada.jpg"
+        alt="Cover von Das Da-Da-Da-Sein"
+      />
+
+      <div class="title-copy">
+        <p class="book-type">Roman</p>
+
+        <h1>Das Da-Da-Da-Sein</h1>
+
+        <p class="subtitle">Sein und Pop</p>
+
+        <div class="edition-meta">
+          <p>Aufbau Verlag · 2011</p>
+        </div>
+      </div>
+    </header>
+
+    <main class="book-content">
+      <section class="author-note">
+        <h2>Einleitung</h2>
+
+        <p>
+          Über diesem Roman schwebt der Wittgenstein-Satz: „Die Grenzen meiner
+          Sprache bedeuten die Grenzen meiner Welt.“ Die einzige Sprache, die
+          der Protagonist versteht, ist die der Popkultur, über die er versucht,
+          eine Verbindung zur Welt aufzubauen. Er spricht in Songzitaten und
+          Filmreferenzen, weil ihm die eigene Sprache abhandengekommen zu sein
+          scheint.
+        </p>
+      </section>
+
+      <section class="section excerpt">
+        <h2>Leseprobe</h2>
+
+        <div class="excerpt-text">
+          <Excerpt />
+        </div>
+
+        <p class="excerpt-end">Ende der Leseprobe</p>
+      </section>
+    </main>
+
+    <footer class="book-footer">
+      <a href="/buecher">
+        <span aria-hidden="true">←</span>
+        Alle Bücher
+      </a>
+    </footer>
+  </article>
+</BaseLayout>
+
+<style>
+  .title-page {
+    width: min(100% - 3rem, 840px);
+    margin: 0 auto;
+    padding: 5rem 0 3rem;
+    display: grid;
+    grid-template-columns: 210px minmax(0, 1fr);
+    gap: 3.5rem;
+    align-items: start;
+  }
+
+  .cover {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .title-copy {
+    padding-top: 0.25rem;
+  }
+
+  .book-type {
+    margin: 0 0 1rem;
+    color: var(--color-muted);
+    font-family: var(--font-sans);
+    font-size: 0.72rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+  }
+
+  h1 {
+    margin: 0;
+    font-size: clamp(3.8rem, 6vw, 5.8rem);
+    font-weight: 400;
+    line-height: 0.92;
+    letter-spacing: -0.045em;
+  }
+
+  .subtitle {
+    margin: 1.25rem 0 0;
+    font-size: 1.55rem;
+    line-height: 1.35;
+  }
+
+  .edition-meta {
+    margin-top: 1.5rem;
+    color: var(--color-muted);
+    font-family: "Newsreader", Georgia, serif;
+    font-size: 1.05rem;
+    line-height: 1.5;
+  }
+
+  .edition-meta p {
+    margin: 0;
+  }
+
+  .book-content {
+    width: min(100% - 3rem, 840px);
+    margin: 0 auto;
+  }
+
+  .author-note {
+    padding: 3rem 0 5rem;
+    border-top: 1px solid var(--color-border);
+  }
+
+  .author-note h2,
+  .section h2 {
+    margin: 0 0 3rem;
+    font-family: var(--font-sans);
+    font-size: 0.78rem;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+  }
+
+  .author-note p {
+    max-width: 46rem;
+    margin: 0;
+    font-size: 1.55rem;
+    line-height: 1.82;
+  }
+
+  .section {
+    padding: 5rem 0;
+    border-top: 1px solid var(--color-border);
+  }
+
+  .excerpt-text {
+    max-width: 40rem;
+  }
+
+  .excerpt-text :global(p) {
+    margin: 0 0 1.8em;
+    font-size: 1.32rem;
+    line-height: 1.9;
+  }
+
+  .excerpt-text :global(em) {
+    font-style: italic;
+  }
+
+  .excerpt-end {
+    margin: 4rem 0 0;
+    color: var(--color-muted);
+    font-family: var(--font-sans);
+    font-size: 0.72rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+  }
+
+  .book-footer {
+    padding: 2rem var(--page-padding) 5rem;
+    border-top: 1px solid var(--color-border);
+  }
+
+  .book-footer a {
+    font-family: "Newsreader", Georgia, serif;
+    font-size: 1rem;
+  }
+
+  @media (max-width: 900px) {
+    .title-page {
+      padding: 4rem 0 2.5rem;
+      grid-template-columns: 125px minmax(0, 1fr);
+      gap: 1.75rem;
+    }
+
+    h1 {
+      font-size: clamp(2.8rem, 12vw, 4.2rem);
+    }
+
+    .subtitle {
+      margin-top: 0.8rem;
+      font-size: 1.2rem;
+    }
+
+    .edition-meta {
+      margin-top: 1rem;
+      font-size: 0.95rem;
+    }
+
+    .author-note {
+      padding: 2.25rem 0 4rem;
+    }
+
+    .author-note p {
+      font-size: 1.35rem;
+    }
+
+    .section {
+      padding: 4rem 0;
+    }
+
+    .excerpt-text :global(p) {
+      font-size: 1.18rem;
+    }
+
+    .book-footer {
+      padding: 2rem 1.5rem 4rem;
+    }
+  }
+</style>

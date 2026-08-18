@@ -1,0 +1,63 @@
+---
+import "../styles/global.css";
+import Sidebar from "../components/Sidebar.astro";
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = "Maik Brüggemeyer",
+  description = "Geschichten zwischen Pop, Literatur, Film und Gesellschaft.",
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1"
+    />
+    <meta name="description" content={description} />
+    <title>{title}</title>
+  </head>
+
+  <body>
+    <div class="site-shell">
+      <Sidebar />
+
+      <main class="site-main">
+        <slot />
+      </main>
+    </div>
+  </body>
+</html>
+
+<link
+  rel="alternate"
+  type="application/rss+xml"
+  title="Maik Brüggemeyer – Wohnzimmer"
+  href="/rss.xml"
+/>
+
+<style>
+  .site-shell {
+    display: grid;
+    grid-template-columns: var(--sidebar-width) minmax(0, 1fr);
+    min-height: 100vh;
+  }
+
+  .site-main {
+    min-width: 0;
+  }
+
+  @media (max-width: 800px) {
+    .site-shell {
+      display: block;
+    }
+  }
+</style>

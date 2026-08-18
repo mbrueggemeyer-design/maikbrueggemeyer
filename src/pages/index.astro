@@ -1,84 +1,225 @@
 ---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { archive } from "../data/archive";
+
+const featuredIds = [
+  "warum-die-deutschen-david-hasselhoff-liebten",
+  "triumph-des-krisenvogels",
+  "kann-man-ueber-architektur-tanzen",
+];
+
+const latest = featuredIds
+  .map((id) => archive.find((entry) => entry.id === id))
+  .filter((entry): entry is NonNullable<typeof entry> => Boolean(entry));
 ---
 
-<!doctype html>
-<html lang="de">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Maik Brüggemeyer</title>
+<BaseLayout
+  title="Maik Brüggemeyer"
+  description="Notizen zur Geschichte der Gegenwart."
+>
 
-  <style>
-    body{
-      margin:0;
-      background:#f5f2eb;
-      color:#111;
-      font-family: Georgia, "Times New Roman", serif;
-    }
+<section class="hero">
 
-    main{
-      max-width:1000px;
-      margin:0 auto;
-      padding:80px 40px;
-    }
+  <div class="hero-inner">
 
-    h1{
-      font-size:5rem;
-      font-weight:400;
-      line-height:0.9;
-      margin-bottom:20px;
-    }
-
-    .claim{
-      font-size:2rem;
-      max-width:700px;
-      line-height:1.3;
-      margin-bottom:80px;
-    }
-
-    nav{
-      display:flex;
-      gap:30px;
-      border-top:1px solid #bbb;
-      padding-top:20px;
-      font-size:1.1rem;
-    }
-
-    nav a{
-      color:#111;
-      text-decoration:none;
-    }
-
-    nav a:hover{
-      text-decoration:underline;
-    }
-  </style>
-
-</head>
-
-<body>
-
-<main>
-
-<h1>
-Maik<br>
-Brüggemeyer
-</h1>
-
-<p class="claim">
-Autor. Journalist. Creative Director des ROLLING STONE.
+<p class="name">
+  Maik Brüggemeyer
 </p>
 
-<nav>
-<a href="#">Texte</a>
-<a href="#">Bücher</a>
-<a href="#">Podcast</a>
-<a href="#">Newsletter</a>
-<a href="#">Termine</a>
-<a href="#">Kontakt</a>
-</nav>
+<h1>
+  Notizen zur<br />
+  Geschichte der<br />
+  Gegenwart.
+</h1>
 
-</main>
+  </div>
 
-</body>
-</html>
+</section>
+
+<section class="archive">
+
+  <div class="entries">
+
+    {
+      latest.map((entry) => (
+
+        <article>
+
+          <h3>{entry.title}</h3>
+
+          <p>{entry.teaser}</p>
+
+          <a href={entry.url}>
+            Lesen →
+          </a>
+
+        </article>
+
+      ))
+    }
+
+  </div>
+
+</section>
+
+</BaseLayout>
+
+<style>
+
+.hero{
+
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  padding: 8rem var(--page-padding) 10rem;
+  border-bottom: 1px solid var(--color-border);
+
+}
+
+.hero-inner{
+
+max-width:900px;
+
+}
+
+.name{
+
+font-family:var(--font-sans);
+
+font-size:.72rem;
+
+letter-spacing:.35em;
+
+text-transform:uppercase;
+
+margin-bottom:4rem;
+
+color:var(--color-muted);
+
+}
+
+h1{
+
+margin:0;
+
+font-size:clamp(4.5rem,8vw,8rem);
+
+font-weight:400;
+
+line-height:.9;
+
+letter-spacing:-.05em;
+
+
+}
+
+.archive{
+
+display:block;
+
+}
+
+.entries{
+
+display:grid;
+
+grid-template-columns:repeat(3,1fr);
+
+}
+
+.entries article{
+
+padding:2.5rem;
+
+border-right:1px solid var(--color-border);
+
+min-height:300px;
+
+display:flex;
+
+flex-direction:column;
+
+}
+
+.entries article:last-child{
+
+border-right:none;
+
+}
+
+
+h3{
+
+font-size:1.8rem;
+
+font-weight:400;
+
+line-height:1.1;
+
+margin-bottom:1rem;
+
+}
+
+.entries article p:not(.meta){
+
+line-height:1.6;
+
+margin-bottom:auto;
+
+}
+
+.entries a {
+  margin-top: 2rem;
+  font-family: "Newsreader", Georgia, serif;
+  font-size: 1rem;
+}
+
+@media(max-width:900px){
+
+.hero{
+
+padding:4rem 1.5rem;
+
+min-height:auto;
+
+}
+
+.archive{
+
+grid-template-columns:1fr;
+
+}
+
+.archive-title{
+
+border-right:none;
+
+border-bottom:1px solid var(--color-border);
+
+}
+
+.entries{
+
+grid-template-columns:1fr;
+
+}
+
+.entries article{
+
+border-right:none;
+
+border-bottom:1px solid var(--color-border);
+
+min-height:auto;
+
+}
+
+.entries article:last-child{
+
+border-bottom:none;
+
+}
+
+}
+
+</style>

@@ -1,0 +1,11 @@
+Neulich sah ich einen Mann, wie er auf dem Bürgersteig vor sich hingaloppierend versuchte, der Geige, die er sich artgerecht zwischen Schulter und Kinn geklemmt hatte, eine Melodie zu entlocken. Wenig später betrat er dasselbe Wartezimmer, in dem auch ich nun schon saß. Ich las in einem Roman, der mir ziemlich auf die Nerven ging, weil der Erzähler sich genötigt sah, alles zu kommentieren und zu erklären, was die Figuren da taten. Woher wollte er das alles denn so genau wissen? Der Mann legte sein Instrument auf den Tisch, setzte sich auf einen Stuhl schräg gegenüber und linste in meine Richtung. »Entschuldigen Sie. Lesen Sie auch zwischen den Zeilen?« »Das ist bei diesem Buch leider kaum möglich.«
+
+Er stutzte, schaute mich eindringlich an. »Ihre Antwort bringt mich direkt nach Kalifornien.« »Na, Sie kommen aber rum … in Gedanken.« »Ich habe da mal gelebt. Ein paar Jahre. Mit einer Frau. Die konnte auch nicht zwischen den Zeilen lesen.« »Aha. Wie lange waren Sie denn da?« »Acht Jahre.« Er schaute vor sich hin auf den Boden, aber irgendwie ins Leere. Ich schaute verlegen weg, dann fasziniert doch wieder hin. Da hatte er den Kopf gehoben. Er sprach Richtung Decke. »Die Medikamente schlagen auf die Nieren.« Dann stand er auf, lief schnurstracks aus dem Zimmer und vergaß seine Geige.
+
+* * *
+
+Tja, so ist das, habe ich noch gedacht, wenn die Welt nicht nach der eigenen Geige tanzt, kann einem das ganz schön auf die Nieren schlagen – besonders, wenn man zwischen den Zeilen lesen kann.
+
+Ich weiß selbst nicht, ob das eine traurige oder eine komische Geschichte ist (jeder, dem ich sie erzähle, lacht jedenfalls). Ja, ich weiß nicht einmal, wie viel von dieser Geschichte eigentlich wirklich passiert ist, weil ich kaum unterscheiden kann zwischen der Realität, den unterbelichteten Bildern aus der Dunkelkammer meines Kopfes und der so genannten Fiktion, die manchmal einfach eine schöne Illusion, manchmal die Wahrheit und oft eine bloße Lüge ist. Ich muss alles ordnen. Ich muss mich wiederholen. Es ist sonst alles sinnlos.
+
+Die Begegnung mit dem Geigenmann fand jedenfalls im Wartezimmer meiner Therapeutin statt. Und warum ich bei einer Therapeutin bin, können Sie sich vermutlich schon denken.

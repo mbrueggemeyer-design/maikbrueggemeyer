@@ -1,0 +1,77 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout
+  title="Podcast – Maik Brüggemeyer"
+  description="ROLLING STONE Weekly."
+>
+
+<section class="page">
+
+  <p class="kicker">
+    Podcast
+  </p>
+
+  <h1>
+    ROLLING STONE Weekly
+  </h1>
+
+  <p class="intro">
+    Mit Jan Jekal und im Wechsel mit Birgit Fuß spreche ich
+    hier über neue Musik, Klassiker und die Popnews der Woche.
+  </p>
+
+  <p class="link">
+    <a
+      href="https://www.rollingstone.de/audio/"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      Alle Folgen bei ROLLING STONE →
+    </a>
+  </p>
+
+</section>
+
+</BaseLayout>
+
+<style>
+
+.page{
+  max-width:760px;
+  margin:0 auto;
+  padding:7rem 2rem 7rem;
+}
+
+.kicker{
+  margin:0 0 2rem;
+  font-family:var(--font-sans);
+  font-size:.72rem;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  color:var(--color-muted);
+}
+
+h1{
+  margin:0;
+  font-size:clamp(4.5rem,9vw,7rem);
+  font-weight:400;
+  line-height:.9;
+  letter-spacing:-.05em;
+}
+
+.intro{
+  max-width:38rem;
+  margin:3rem 0;
+  font-size:1.55rem;
+  line-height:1.65;
+  color:var(--color-muted);
+}
+
+.link a{
+  font-family:"Newsreader", Georgia, serif;
+  font-size:1.2rem;
+}
+
+</style>

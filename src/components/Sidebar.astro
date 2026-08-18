@@ -1,0 +1,179 @@
+---
+const navigation = [
+  { label: "Essays", href: "/texte" },
+  { label: "Gespräche", href: "/gespraeche" },
+  { label: "Wohnzimmer", href: "/wohnzimmer" },
+  { label: "Bücher", href: "/buecher" },
+  { label: "Podcast", href: "/podcast" },
+  { label: "Termine", href: "/termine" },
+  { label: "Über", href: "/ueber" },
+];
+
+const currentPath = Astro.url.pathname;
+---
+
+<aside class="sidebar">
+  <div class="sidebar-top">
+    <a href="/" class="site-title">
+      Maik Brüggemeyer
+    </a>
+
+    <nav aria-label="Hauptnavigation">
+      {
+        navigation.map((item) => {
+          const isActive =
+            currentPath === item.href ||
+            currentPath.startsWith(`${item.href}/`);
+
+          return (
+            <a
+              class:list={["nav-link", { active: isActive }]}
+              href={item.href}
+            >
+              {item.label}
+            </a>
+          );
+        })
+      }
+    </nav>
+  </div>
+
+  <div class="sidebar-bottom">
+    <div class="rule"></div>
+
+<div class="social">
+  <a href="#" aria-label="Instagram">Instagram</a>
+  <a href="/rss.xml" aria-label="RSS-Feed">RSS</a>
+  <a href="mailto:m.brueggemeyer@googlemail.com">Mail</a>
+</div>
+
+<div class="legal">
+  <a href="/impressum">Impressum</a>
+  <a href="/datenschutz">Datenschutz</a>
+</div>
+  </div>
+</aside>
+
+<style>
+  .sidebar {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    padding: 6.5rem 2rem 2rem;
+    border-right: 1px solid var(--color-border);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: var(--color-background);
+  }
+
+  .sidebar-top {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+  }
+
+  .site-title {
+    width: fit-content;
+    color: var(--color-text);
+    font-family: "Newsreader", Georgia, serif;
+    font-size: 0.9rem;
+    font-weight: 400;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    text-decoration: none;
+  }
+
+  .site-title:hover {
+    opacity: 0.65;
+  }
+
+  nav {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.6rem;
+  }
+
+  .nav-link {
+    width: fit-content;
+    color: var(--color-muted);
+    font-family: "Newsreader", Georgia, serif !important;
+    font-size: 1.45rem;
+    font-weight: 400;
+    line-height: 1.15;
+  }
+
+  .nav-link:hover,
+  .nav-link.active {
+    color: var(--color-text);
+  }
+
+  .nav-link.active {
+    font-style: italic;
+    font-weight: 400;
+  }
+
+  .sidebar-bottom {
+    display: grid;
+    gap: 1.4rem;
+  }
+
+  .rule {
+    border-top: 1px solid var(--color-border);
+  }
+
+  .social {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.9rem;
+    color: var(--color-muted);
+    font-family: var(--font-sans);
+    font-size: 0.72rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  .legal {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.9rem;
+  color: var(--color-muted);
+  font-family: var(--font-sans);
+  font-size: 0.68rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.legal a:hover {
+  color: var(--color-text);
+}
+
+  @media (max-width: 800px) {
+    .sidebar {
+      position: relative;
+      height: auto;
+      padding: 1.2rem;
+      border-right: 0;
+      border-bottom: 1px solid var(--color-border);
+    }
+
+    .sidebar-top {
+      gap: 1.5rem;
+    }
+
+    nav {
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 0.85rem 1.25rem;
+    }
+
+    .nav-link {
+      font-size: 1.05rem;
+    }
+
+    .sidebar-bottom {
+      display: none;
+    }
+  }
+</style>
