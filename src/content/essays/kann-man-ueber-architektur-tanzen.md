@@ -1,7 +1,7 @@
 ---
 title: "Kann man über Architektur tanzen?"
 teaser: "Warum Musikjournalismus keine Musik erklärt, sondern ihren Resonanzraum erweitert."
-date: 2019-02-01
+date: 2019-10-01
 topic: "Pop"
 publication: "Pop. Eine Gebrauchsanweisung"
 featured: true
