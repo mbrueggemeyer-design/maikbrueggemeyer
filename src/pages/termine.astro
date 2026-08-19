@@ -21,7 +21,6 @@ const upcoming = [
   },
 ];
 
-const past = [];
 ---
 
 <BaseLayout
@@ -69,37 +68,6 @@ const past = [];
       </div>
     </section>
 
-    {
-      past.length > 0 && (
-        <section class="event-section past">
-          <p class="section-label">Vergangene Termine</p>
-
-          <div class="event-list">
-            {past.map((event) => (
-              <article class="event">
-                <div class="event-date">
-                  <p>{event.date}</p>
-                </div>
-
-                <div class="event-copy">
-                  <p class="city">{event.city}</p>
-
-                  <h2>{event.title}</h2>
-
-                  <p class="meta">
-                    {event.type} im {event.venue}
-                  </p>
-
-                  {event.details && (
-                    <p class="details">{event.details}</p>
-                  )}
-                </div>
-              </article>
-            ))}
-          </div>
-        </section>
-      )
-    }
 
   </main>
 </BaseLayout>
