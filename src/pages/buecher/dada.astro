@@ -1,6 +1,26 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import { Content as Excerpt } from "../../content/books/dada-auszug.md";
+
+const bookSchema = {
+  "@context": "https://schema.org",
+  "@type": "Book",
+  "@id": "https://maikbrueggemeyer.de/buecher/dada/#book",
+  name: "Das Da-Da-Da-Sein",
+  url: "https://maikbrueggemeyer.de/buecher/dada/",
+  image: "https://maikbrueggemeyer.de/images/books/dada.jpg",
+  author: {
+    "@id": "https://maikbrueggemeyer.de/#person",
+  },
+  datePublished: "2011",
+  inLanguage: "de",
+  genre: "Roman",
+  publisher: {
+    "@type": "Organization",
+    name: "Aufbau Verlag",
+  },
+  description: "Sein und Pop.",
+};
 ---
 
 <BaseLayout
