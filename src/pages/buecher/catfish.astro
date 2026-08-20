@@ -1,11 +1,33 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import { Content as Excerpt } from "../../content/books/catfish-auszug.md";
+
+const bookSchema = {
+  "@context": "https://schema.org",
+  "@type": "Book",
+  "@id": "https://maikbrueggemeyer.de/buecher/catfish/#book",
+  name: "Catfish",
+  url: "https://maikbrueggemeyer.de/buecher/catfish/",
+  image: "https://maikbrueggemeyer.de/images/books/catfish.jpg",
+  author: {
+    "@id": "https://maikbrueggemeyer.de/#person",
+  },
+  datePublished: "2015",
+  inLanguage: "de",
+  genre: "Roman",
+  publisher: {
+    "@type": "Organization",
+    name: "Metrolit Verlag",
+  },
+  description:
+    "Ein Bob-Dylan-Roman über Projektionen, Verwandlungen und die Sehnsucht nach einem anderen Leben.",
+};
 ---
 
 <BaseLayout
   title="Catfish. Ein Bob-Dylan-Roman – Maik Brüggemeyer"
-  description="Ein Roman über Bob Dylan, Amerika und die Geschichten, die wir uns über beides erzählen."
+  description="Ein Roman über Bob Dylan, Projektionen, Verwandlungen und die Sehnsucht nach einem anderen Leben."
+  structuredData={bookSchema}
 >
   <article class="book-page">
 
