@@ -38,10 +38,15 @@ const latest = featuredIds
 
 <section class="intro-copy">
   <p>
-    Ich bin Autor, schreibe Romane und Sachbücher und arbeite als Creative
-    Director beim <em>Rolling Stone</em>. Ich mache Podcasts und veröffentliche
-    Newsletter. Auf dieser Seite finden sich einige ausgewählte Arbeiten zu
-    Musik, Literatur, Film und Popkultur im weiteren Sinne.
+    Ich bin Autor, schreibe{" "}
+    <a href="/buecher">Romane und Sachbücher</a>
+    {" "}und arbeite als Creative Director beim <em>Rolling Stone</em>.
+    Ich mache{" "}
+    <a href="/podcast">Podcasts</a>
+    {" "}und veröffentliche{" "}
+    <a href="/wohnzimmer">Newsletter</a>.
+    Auf dieser Seite finden sich einige ausgewählte Arbeiten zu Musik,
+    Literatur, Film und Popkultur im weiteren Sinne.
   </p>
 </section>
 
@@ -132,6 +137,17 @@ letter-spacing:-.05em;
   font-size: 1.05rem;
   line-height: 1.65;
   color: var(--color-muted);
+}
+
+.intro-copy a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.18em;
+}
+
+.intro-copy a:hover {
+  color: var(--color-text);
 }
 
 .archive{
