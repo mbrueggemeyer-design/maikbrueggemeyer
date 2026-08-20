@@ -2,6 +2,27 @@
 import "../styles/global.css";
 import Sidebar from "../components/Sidebar.astro";
 
+const personSchema = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "@id": "https://maikbrueggemeyer.de/#person",
+  name: "Maik Brüggemeyer",
+  url: "https://maikbrueggemeyer.de/",
+  jobTitle: ["Autor", "Kulturjournalist", "Creative Director"],
+  worksFor: {
+    "@type": "Organization",
+    name: "Rolling Stone Deutschland",
+    url: "https://www.rollingstone.de/"
+  },
+  knowsAbout: [
+    "Popmusik",
+    "Literatur",
+    "Film",
+    "Popkultur",
+    "Musikjournalismus"
+  ]
+};
+
 interface Props {
   title?: string;
   description?: string;
@@ -17,13 +38,28 @@ const {
 <html lang="de">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1"
     />
-    <meta name="description" content={description} />
+
     <title>{title}</title>
+    <meta name="description" content={description} />
+
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <link
+      rel="alternate"
+      type="application/rss+xml"
+      title="Maik Brüggemeyer – Wohnzimmer"
+      href="/rss.xml"
+    />
+
+    <script
+      type="application/ld+json"
+      set:html={JSON.stringify(personSchema)}
+    ></script>
   </head>
 
   <body>
@@ -36,13 +72,6 @@ const {
     </div>
   </body>
 </html>
-
-<link
-  rel="alternate"
-  type="application/rss+xml"
-  title="Maik Brüggemeyer – Wohnzimmer"
-  href="/rss.xml"
-/>
 
 <style>
   .site-shell {
