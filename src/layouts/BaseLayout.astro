@@ -12,25 +12,27 @@ const personSchema = {
   worksFor: {
     "@type": "Organization",
     name: "Rolling Stone Deutschland",
-    url: "https://www.rollingstone.de/"
+    url: "https://www.rollingstone.de/",
   },
   knowsAbout: [
     "Popmusik",
     "Literatur",
     "Film",
     "Popkultur",
-    "Musikjournalismus"
-  ]
+    "Musikjournalismus",
+  ],
 };
 
 interface Props {
   title?: string;
   description?: string;
+  structuredData?: Record<string, unknown>;
 }
 
 const {
   title = "Maik Brüggemeyer",
   description = "Geschichten zwischen Pop, Literatur, Film und Gesellschaft.",
+  structuredData,
 } = Astro.props;
 ---
 
@@ -39,10 +41,7 @@ const {
   <head>
     <meta charset="UTF-8" />
 
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1"
-    />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>{title}</title>
     <meta name="description" content={description} />
@@ -60,6 +59,15 @@ const {
       type="application/ld+json"
       set:html={JSON.stringify(personSchema)}
     ></script>
+
+    {
+      structuredData && (
+        <script
+          type="application/ld+json"
+          set:html={JSON.stringify(structuredData)}
+        ></script>
+      )
+    }
   </head>
 
   <body>
