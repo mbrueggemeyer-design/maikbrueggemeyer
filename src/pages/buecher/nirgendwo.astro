@@ -1,11 +1,34 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import { Content as Excerpt } from "../../content/books/nirgendwo-auszug.md";
+
+const bookSchema = {
+  "@context": "https://schema.org",
+  "@type": "Book",
+  "@id": "https://maikbrueggemeyer.de/buecher/nirgendwo/#book",
+  name: "Wie jeder weiß, ist das hier das Nirgendwo",
+  url: "https://maikbrueggemeyer.de/buecher/nirgendwo/",
+  image: "https://maikbrueggemeyer.de/images/books/nirgendwo.jpg",
+  author: {
+    "@id": "https://maikbrueggemeyer.de/#person",
+  },
+  isbn: "978-3-95575-259-0",
+  datePublished: "2026",
+  inLanguage: "de",
+  genre: "Roman",
+  publisher: {
+    "@type": "Organization",
+    name: "Ventil Verlag",
+  },
+  description:
+    "Ein melancholisch-komischer Roman über Herkunft, das Älterwerden und die Versprechen der Popkultur.",
+};
 ---
 
 <BaseLayout
   title="Wie jeder weiß, ist das hier das Nirgendwo – Maik Brüggemeyer"
   description="Ein melancholisch-komischer Roman über Herkunft, das Älterwerden und die Versprechen der Popkultur."
+  structuredData={bookSchema}
 >
   <article class="book-page">
 
