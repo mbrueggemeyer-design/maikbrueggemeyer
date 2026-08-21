@@ -1,11 +1,33 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import { Content as Excerpt } from "../../content/books/schoener-auszug.md";
+
+const bookSchema = {
+  "@context": "https://schema.org",
+  "@type": "Book",
+  "@id": "https://maikbrueggemeyer.de/buecher/schoener/#book",
+  name: "Schöner kann es gar nicht sein",
+  url: "https://maikbrueggemeyer.de/buecher/schoener/",
+  image: "https://maikbrueggemeyer.de/images/books/schoener.jpg",
+  author: {
+    "@id": "https://maikbrueggemeyer.de/#person",
+  },
+  datePublished: "2021",
+  inLanguage: "de",
+  genre: "Sachbuch",
+  publisher: {
+    "@type": "Organization",
+    name: "Verlag Andreas Reiffer",
+  },
+  description: "The Beatles von 1957 bis 1970.",
+};
 ---
 
 <BaseLayout
   title="Schöner kann es gar nicht sein – Maik Brüggemeyer"
   description="The Beatles von 1957 bis 1970."
+    image="/images/books/og-schoener.png"
+  structuredData={bookSchema}
 >
   <article class="book-page">
     <header class="title-page">
