@@ -34,6 +34,8 @@ const {
   description = "Geschichten zwischen Pop, Literatur, Film und Gesellschaft.",
   structuredData,
 } = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 ---
 
 <!doctype html>
@@ -54,6 +56,8 @@ const {
       title="Maik Brüggemeyer – Wohnzimmer"
       href="/rss.xml"
     />
+
+<link rel="canonical" href={canonicalURL.toString()} />
 
     <script
       type="application/ld+json"
