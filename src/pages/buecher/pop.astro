@@ -1,11 +1,33 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import { Content as Excerpt } from "../../content/books/pop-auszug.md";
+
+const bookSchema = {
+  "@context": "https://schema.org",
+  "@type": "Book",
+  "@id": "https://maikbrueggemeyer.de/buecher/pop/#book",
+  name: "Pop. Eine Gebrauchsanweisung",
+  url: "https://maikbrueggemeyer.de/buecher/pop/",
+  image: "https://maikbrueggemeyer.de/images/books/pop.jpg",
+  author: {
+    "@id": "https://maikbrueggemeyer.de/#person",
+  },
+  datePublished: "2019",
+  inLanguage: "de",
+  genre: "Sachbuch",
+  publisher: {
+    "@type": "Organization",
+    name: "Penguin Verlag",
+  },
+  description: "Fragen und Antworten zu Pop.",
+};
 ---
 
 <BaseLayout
   title="Pop. Eine Gebrauchsanweisung – Maik Brüggemeyer"
   description="Fragen und Antworten zu Pop."
+  image="/images/books/og-pop.png"
+  structuredData={bookSchema}
 >
   <article class="book-page">
     <header class="title-page">
