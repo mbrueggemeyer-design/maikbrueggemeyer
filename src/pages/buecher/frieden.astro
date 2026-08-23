@@ -1,11 +1,33 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import { Content as Excerpt } from "../../content/books/frieden-auszug.md";
+
+const bookSchema = {
+  "@context": "https://schema.org",
+  "@type": "Book",
+  "@id": "https://maikbrueggemeyer.de/buecher/frieden/#book",
+  name: "I've Been Looking For Frieden",
+  url: "https://maikbrueggemeyer.de/buecher/frieden/",
+  image: "https://maikbrueggemeyer.de/images/books/frieden.jpg",
+  author: {
+    "@id": "https://maikbrueggemeyer.de/#person",
+  },
+  datePublished: "2018",
+  inLanguage: "de",
+  genre: "Sachbuch",
+  publisher: {
+    "@type": "Organization",
+    name: "Penguin Verlag",
+  },
+  description: "Eine (bundes-)deutsche Geschichte in zehn Songs.",
+};
 ---
 
 <BaseLayout
   title="I've Been Looking For Frieden – Maik Brüggemeyer"
   description="Eine (bundes-)deutsche Geschichte in zehn Songs."
+    image="/images/books/og-frieden.png"
+  structuredData={bookSchema}
 >
   <article class="book-page">
     <header class="title-page">
