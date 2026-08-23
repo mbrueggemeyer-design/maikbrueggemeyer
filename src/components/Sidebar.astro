@@ -1,12 +1,12 @@
 ---
 const navigation = [
-  { label: "Bücher", href: "/buecher" },
-  { label: "Wohnzimmer", href: "/wohnzimmer" },
-  { label: "Podcast", href: "/podcast" },
-  { label: "Gespräche", href: "/gespraeche" },
-  { label: "Essays", href: "/texte" },
-  { label: "Termine", href: "/termine" },
-  { label: "Über", href: "/ueber" },
+  { label: "Bücher", href: "/buecher/" },
+  { label: "Wohnzimmer", href: "/wohnzimmer/" },
+  { label: "Podcast", href: "/podcast/" },
+  { label: "Gespräche", href: "/gespraeche/" },
+  { label: "Essays", href: "/texte/" },
+  { label: "Termine", href: "/termine/" },
+  { label: "Über", href: "/ueber/" },
 ];
 
 const currentPath = Astro.url.pathname;
@@ -20,20 +20,20 @@ const currentPath = Astro.url.pathname;
 
     <nav aria-label="Hauptnavigation">
       {
-        navigation.map((item) => {
-          const isActive =
-            currentPath === item.href ||
-            currentPath.startsWith(`${item.href}/`);
+navigation.map((item) => {
+  const isActive =
+    currentPath === item.href ||
+    currentPath.startsWith(item.href);
 
-          return (
-            <a
-              class:list={["nav-link", { active: isActive }]}
-              href={item.href}
-            >
-              {item.label}
-            </a>
-          );
-        })
+  return (
+    <a
+      class:list={["nav-link", { active: isActive }]}
+      href={item.href}
+    >
+      {item.label}
+    </a>
+  );
+})
       }
     </nav>
   </div>
@@ -48,8 +48,8 @@ const currentPath = Astro.url.pathname;
 </div>
 
 <div class="legal">
-  <a href="/impressum">Impressum</a>
-  <a href="/datenschutz">Datenschutz</a>
+  <a href="/impressum/">Impressum</a>
+  <a href="/datenschutz/">Datenschutz</a>
 </div>
   </div>
 </aside>
